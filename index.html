@@ -97,6 +97,7 @@ header {
   scroll-snap-type: x mandatory;
   gap: 10px;
   padding: 1rem;
+  scroll-behavior: smooth;
 }
 
 .slide {
@@ -158,7 +159,7 @@ footer {
   </nav>  <div class="hero">
     <img src="logo.png" alt="شعار المنصة">
     <h1>أول منصة يمنية معتمدة لتعليم الأمن السيبراني والتقنية الحديثة</h1>
-  </div>  <div class="slider">
+  </div>  <div class="slider" id="slider">
     <div class="slide"><img src="logo2.jpg" alt="كورس 1"></div>
     <div class="slide"><img src="network.jpg" alt="كورس 2"></div>
     <div class="slide"><img src="cyber.jpg" alt="كورس 3"></div>
@@ -170,36 +171,31 @@ footer {
       <a href="#">Email</a>
     </div>
     <div>جميع الحقوق محفوظة &copy; Cyber Aden 2025</div>
-  </footer> 
-  <script>
-  function toggleMenu() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('open');
-  }
-</script>
-
-<script>
-  // كود السلايدر التلقائي
-  const slider = document.querySelector('.slider');
-  let scrollAmount = 0;
-
-  setInterval(() => {
-    if (!slider) return;
-
-    const slideWidth = slider.querySelector('.slide').offsetWidth + 10;
-    scrollAmount += slideWidth;
-
-    if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
-      scrollAmount = 0;
+  </footer>  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
     }
 
-    slider.scrollTo({
-      left: scrollAmount,
-      behavior: 'smooth'
-    });
-  }, 3000);
+    // كود السلايدر التلقائي
+    const slider = document.getElementById('slider');
+    let scrollAmount = 0;
 
-  
+    setInterval(() => {
+      if (!slider) return;
+
+      const slideWidth = slider.querySelector('.slide').offsetWidth + 10;
+      scrollAmount += slideWidth;
+
+      if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+        scrollAmount = 0;
+      }
+
+      slider.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }, 3000);
   </script></body>
 </html>
 
