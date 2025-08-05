@@ -1,203 +1,190 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html><html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>دورة بايثون - سايبر عدن</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تفاصيل الدورة | Cyber Aden</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: sans-serif;
-      background-color: #f4f4f4;
-    }
+      padding: 0;
+      font-family: 'Tahoma', sans-serif;
+    }body {
+  background-color: #f5f5f5;
+  color: #2c3e50;
+}
 
-    header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 1rem;
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      z-index: 1000;
-    }
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
 
-    .header-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-align: center;
-      flex: 1;
-    }
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
 
-    .menu-toggle {
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-    }
+.menu-toggle {
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  left: 1rem;
+}
 
-    .sidebar {
-      position: fixed;
-      top: 0;
-      right: -250px;
-      width: 250px;
-      height: 100%;
-      background-color: #34495e;
-      color: white;
-      padding: 2rem 1rem;
-      transition: right 0.3s ease;
-      z-index: 1002;
-    }
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #34495e;
+  padding: 2rem 1rem;
+  transition: right 0.3s ease;
+  z-index: 1100;
+}
 
-    .sidebar.open {
-      right: 0;
-    }
+.sidebar.open {
+  right: 0;
+}
 
-    .sidebar a {
-      display: block;
-      color: white;
-      text-decoration: none;
-      margin: 1rem 0;
-      font-size: 1.1rem;
-    }
+.sidebar ul {
+  list-style: none;
+}
 
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-    }
+.sidebar li {
+  margin-bottom: 1.5rem;
+}
 
-    .course-banner {
-      margin-top: 4.5rem;
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-    }
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
 
-    .course-content {
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-      background-color: white;
-      border-radius: 10px;
-      margin-top: 1rem;
-    }
+.hero {
+  text-align: center;
+  margin-top: 80px;
+  padding: 2rem 1rem 0;
+}
 
-    .course-content h2 {
-      color: #2c3e50;
-    }
+.hero img {
+  width: 220px;
+  height: auto;
+  margin-bottom: 1rem;
+}
 
-    ul {
-      line-height: 1.8;
-      padding-right: 1.5rem;
-    }
+.content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
 
-    .subscribe-button {
-      display: block;
-      width: fit-content;
-      margin: 2rem auto 0;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      background-color: #27ae60;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-    }
+.content h2 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
 
-    .subscribe-button:hover {
-      background-color: #219150;
-    }
+.content ul {
+  padding-right: 1.5rem;
+  margin-bottom: 1.5rem;
+}
 
-    footer {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
+.content ul li {
+  margin-bottom: 0.5rem;
+}
 
-    .social-icons a {
-      margin: 0 10px;
-      color: white;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
+.enroll-btn {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto 1rem;
+  background-color: #2c3e50;
+  color: white;
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  margin-top: 2rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
   </style>
 </head>
 <body>
-
-  <!-- ✅ الشريط العلوي -->
   <header>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-    <div class="header-title">Cyber Aden</div>
-  </header>
-
-  <!-- ✅ القائمة الجانبية -->
-  <nav class="sidebar" id="sidebar">
-    <button class="close-btn" onclick="toggleSidebar()">×</button>
-        <a href="index.html">🏠 الرئيسية</a>
-    <a href="brief.html">ℹ️ من نحن</a>
-    <a href="courses.html">📚 الكورسات</a>
-    <a href="dependence.html">📄 الاعتماد</a>
-    <a href="contact.html">📞 تواصل معنا</a>
-  </nav>
-
-  <!-- ✅ صورة الدورة -->
- 
-  <!-- ✅ محتوى الدورة -->
-  <section class="course-content">
-    <h2> دورة جافا للمبتدئين</h2>
-    <p>
-   دورة أساسيات لغة Java - للمبتدئين
-هل أنت مستعد لدخول عالم البرمجة بلغة تُستخدم في كل مكان؟
-ابدأ رحلتك مع دورة Java الأساسية وكن جاهزًا للانطلاق
-    </p>
-
-    <h3>ماذا ستتعلم؟</h3>
+    <div class="logo">Cyber Aden</div>
+    <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+  </header>  <nav class="sidebar" id="sidebar">
     <ul>
-         <li>خطوات تثبيت بيئة العمل (JDK + محرر الكود)</li>
-      <li>فهم المتغيرات وأنواع البيانات</li>
-      <li> جراء العمليات الحسابية </li>
-      <li>  اجراء العمليات المنطقية</li>
-      <li>استخدام الجمل الشرطية if و switch</li>
-      <li>  الزيادة القبلية والبعدية</li>
-      <li>النقصان القبلي والبعدي</li>
-      <li>الحلقات (while - for)</li>
-    <h3> نظام الدورة</h3>
-    <li>واجبات بعد كل محاضرة</li>
-    <li>شرح تفصيلي للواجب في المحاضرة التالية</li>
-
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="courses.html">الدورات</a></li>
+      <li><a href="brief.html">عن المنصة</a></li>
+      <li><a href="dependence.html">الاعتماد</a></li>
     </ul>
+  </nav>  <div class="hero">
+    <img src="logo.png" alt="شعار المنصة">
+  </div>  <div class="content">
+    <h2>دورة جافا للمبتدئين</h2>
+    <p> خطوات تثبيت بيئة العمل (JDK + محرر الكود).</p><ul>
+  <li>فهم المتغيرات وأنواع البيانات </li>
+  <li>استخدام الجمل الشرطية if و switch</li>
+  <li>التكرار باستخدام while و for</li>
+  <li>الزيادة القبلية والبعدية</li>
+  <li> النقصان القبلي والبعدي</li>
+  <li>مشاريع تطبيقية بسيطة</li>
+</ul>
 
-    <a href="https://wa.me/967775095932?text=أريد%20الاشتراك%20في%20دورة%20 java" class="subscribe-button" target="_blank">
-      ✅ الاشتراك عبر واتساب
-    </a>
-  </section>
-  <!-- ✅ التذييل -->
-   <footer id="contact">
+<a class="enroll-btn" href="https://wa.me/967775095932?text=javaأرغب%20في%20الاشتراك%20في%20دورة%20" target="_blank">اشترك الآن عبر واتساب</a>
+
+  </div>  <footer>
     <div class="social-icons">
-      <a href="https://instagram.com/cyber.aden.x" target="_blank">🔗 Instagram</a>
-      <a href="https://wa.me/96775095932" target="_blank">📞 WhatsApp</a>
-      <a href="cyberaden0@gmail.com">📧 Email</a>
+      <a href="https://wa.me/967775095932" target="_blank">📞 واتساب</a>
+      <a href="https://instagram.com/cyber.aden.x" target="_blank">📷 إنستجرام</a>
+      <a href="mailto:cyberaden1@gmail.com" target="_blank">✉️ البريد الإلكتروني</a>
     </div>
-    <p>جميع الحقوق محفوظة © Cyber Aden 2025</p>
-  </footer>
-  <script>
-    function toggleSidebar() {
-      document.getElementById('sidebar').classList.toggle('open');
+    <div>جميع الحقوق محفوظة &copy; Cyber Aden 2025</div>
+  </footer>  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
     }
-  </script>
-
-</body>
-
+  </script></body>
 </html>
