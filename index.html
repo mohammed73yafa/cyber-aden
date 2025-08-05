@@ -175,5 +175,28 @@ footer {
       const sidebar = document.getElementById('sidebar');
       sidebar.classList.toggle('open');
     }
+    <script>
+  // سلايدر الصور يدور تلقائيًا
+  const slider = document.querySelector('.slider');
+  let scrollAmount = 0;
+
+  setInterval(() => {
+    if (!slider) return;
+
+    const slideWidth = slider.querySelector('.slide').offsetWidth + 10; // عرض الصورة + المسافة بين الصور
+    scrollAmount += slideWidth;
+
+    // لو وصلنا للنهاية، نرجع للبداية
+    if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+      scrollAmount = 0;
+    }
+
+    slider.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }, 3000); // كل 3 ثواني
+</script>
   </script></body>
 </html>
+
