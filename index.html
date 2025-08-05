@@ -170,23 +170,25 @@ footer {
       <a href="#">Email</a>
     </div>
     <div>جميع الحقوق محفوظة &copy; Cyber Aden 2025</div>
-  </footer>  <script>
-    function toggleMenu() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('open');
-    }
-    <script>
-  // سلايدر الصور يدور تلقائيًا
+  </footer> 
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('open');
+  }
+</script>
+
+<script>
+  // كود السلايدر التلقائي
   const slider = document.querySelector('.slider');
   let scrollAmount = 0;
 
   setInterval(() => {
     if (!slider) return;
 
-    const slideWidth = slider.querySelector('.slide').offsetWidth + 10; // عرض الصورة + المسافة بين الصور
+    const slideWidth = slider.querySelector('.slide').offsetWidth + 10;
     scrollAmount += slideWidth;
 
-    // لو وصلنا للنهاية، نرجع للبداية
     if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
       scrollAmount = 0;
     }
@@ -195,8 +197,10 @@ footer {
       left: scrollAmount,
       behavior: 'smooth'
     });
-  }, 3000); // كل 3 ثواني
-</script>
+  }, 3000);
+
+  
   </script></body>
 </html>
+
 
