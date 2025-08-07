@@ -13,7 +13,25 @@
   background-color: #f5f5f5;
   color: #2c3e50;
 }
+body {
+  background-color: white;
+  margin: 0;
+  font-family: sans-serif;
+}
 
+
+.contact-bar a {
+  color: white;
+  font-size: 26px;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-bar a:hover {
+  color: #00ffcc; /* لون عند التحويم */
+  transform: scale(1.2);
+}
 header {
   background-color: #2c3e50;
   color: white;
@@ -184,9 +202,15 @@ footer {
 
   </div>  <footer>
     <div class="social-icons">
-      <a href="https://wa.me/967775095932" target="_blank">📞 واتساب</a>
-      <a href="https://instagram.com/cyber.aden.x" target="_blank">📷 إنستجرام</a>
-      <a href="mailto:cyberaden1@gmail.com" target="_blank">✉️ البريد الإلكتروني</a>
+<div class="contact-bar">
+  <a href="https://wa.me/967775095932" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+ <a href="mailto:cyberaden1@gmail.com" target="_blank">
+  <i class="fas fa-envelope"></i>
+</a>
+  <a href="https://instagram.com/cyber.aden.1" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+</div>
+
+      
     </div>
     <div>جميع الحقوق محفوظة &copy; Cyber Aden 2025</div>
   </footer>  <script>
@@ -196,6 +220,7 @@ footer {
     }
   </script></body>
 </html>
+
 
 
 
